@@ -220,49 +220,49 @@ ACTIVE_CAMPAIGN_KEY=os.environ.get('ACTIVE_CAMPAIGN_KEY')
 INFURA_URL=os.environ.get('INFURA_URL')
 
 
-if not DEBUG:
-    # CSRF_COOKIE_DOMAIN = os.environ.get('CSRF_COOKIE_DOMAIN_DEPLOY')
-    ALLOWED_HOSTS=env.list('ALLOWED_HOSTS_DEPLOY')
-    CORS_ORIGIN_WHITELIST =env.list('CORS_ORIGIN_WHITELIST_DEPLOY')
-    CSRF_TRUSTED_ORIGINS =env.list('CSRF_TRUSTED_ORIGINS_DEPLOY')
+# if not DEBUG:
+#     # CSRF_COOKIE_DOMAIN = os.environ.get('CSRF_COOKIE_DOMAIN_DEPLOY')
+#     ALLOWED_HOSTS=env.list('ALLOWED_HOSTS_DEPLOY')
+#     CORS_ORIGIN_WHITELIST =env.list('CORS_ORIGIN_WHITELIST_DEPLOY')
+#     CSRF_TRUSTED_ORIGINS =env.list('CSRF_TRUSTED_ORIGINS_DEPLOY')
 
-    DEFAULT_FROM_EMAIL = 'BoomSlag - Ecommerce <mail@boomslag.com>'
-    EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_HOST = env('EMAIL_HOST')
-    EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-    EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
-    EMAIL_PORT = env('EMAIL_PORT')
-    EMAIL_USE_TLS = env('EMAIL_USE_TLS')
+#     DEFAULT_FROM_EMAIL = 'BoomSlag - Ecommerce <mail@boomslag.com>'
+#     EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+#     EMAIL_HOST = env('EMAIL_HOST')
+#     EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+#     EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+#     EMAIL_PORT = env('EMAIL_PORT')
+#     EMAIL_USE_TLS = env('EMAIL_USE_TLS')
 
-    # CSRF_COOKIE_SECURE = True
-    # SESSION_COOKIE_SECURE = True
+#     # CSRF_COOKIE_SECURE = True
+#     # SESSION_COOKIE_SECURE = True
 
-    STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY_DEPLOY')
-    STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY_DEPLOY')
-    STRIPE_WEBHOOK_SECRET= env('STRIPE_WEBHOOK_SECRET_DEPLOY')
+#     STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY_DEPLOY')
+#     STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY_DEPLOY')
+#     STRIPE_WEBHOOK_SECRET= env('STRIPE_WEBHOOK_SECRET_DEPLOY')
 
-    # django-ckeditor will not work with S3 through django-storages without this line in settings.py
-    AWS_QUERYSTRING_AUTH = False
+#     # django-ckeditor will not work with S3 through django-storages without this line in settings.py
+#     AWS_QUERYSTRING_AUTH = False
 
-    # aws settings
+#     # aws settings
 
-    AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
-    AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
+#     AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+#     AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+#     AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
 
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.us-east-2.amazonaws.com'
-    AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
-    AWS_DEFAULT_ACL = 'public-read'
+#     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.us-east-2.amazonaws.com'
+#     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
+#     AWS_DEFAULT_ACL = 'public-read'
 
-    # s3 static settings
-    STATIC_LOCATION = 'static'
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
-    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#     # s3 static settings
+#     STATIC_LOCATION = 'static'
+#     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
+#     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-    # s3 public media settings
-    PUBLIC_MEDIA_LOCATION = 'media'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
-    DEFAULT_FILE_STORAGE = 'core.storage_backends.MediaStore'
+#     # s3 public media settings
+#     PUBLIC_MEDIA_LOCATION = 'media'
+#     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
+#     DEFAULT_FILE_STORAGE = 'core.storage_backends.MediaStore'
 
-    STATICFILES_DIRS = (os.path.join(BASE_DIR, 'build/static'),)
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#     STATICFILES_DIRS = (os.path.join(BASE_DIR, 'build/static'),)
+#     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
