@@ -214,17 +214,17 @@ FILE_UPLOAD_PERMISSIONS = 0o640
 
 EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
 
-ACTIVE_CAMPAIGN_URL=os.environ.get('ACTIVE_CAMPAIGN_URL')
-ACTIVE_CAMPAIGN_KEY=os.environ.get('ACTIVE_CAMPAIGN_KEY')
+# ACTIVE_CAMPAIGN_URL=os.environ.get('ACTIVE_CAMPAIGN_URL')
+# ACTIVE_CAMPAIGN_KEY=os.environ.get('ACTIVE_CAMPAIGN_KEY')
 
-INFURA_URL=os.environ.get('INFURA_URL')
+# INFURA_URL=os.environ.get('INFURA_URL')
 
 
-# if not DEBUG:
-#     # CSRF_COOKIE_DOMAIN = os.environ.get('CSRF_COOKIE_DOMAIN_DEPLOY')
-#     ALLOWED_HOSTS=env.list('ALLOWED_HOSTS_DEPLOY')
-#     CORS_ORIGIN_WHITELIST =env.list('CORS_ORIGIN_WHITELIST_DEPLOY')
-#     CSRF_TRUSTED_ORIGINS =env.list('CSRF_TRUSTED_ORIGINS_DEPLOY')
+if not DEBUG:
+    # CSRF_COOKIE_DOMAIN = os.environ.get('CSRF_COOKIE_DOMAIN_DEPLOY')
+    ALLOWED_HOSTS=env.list('ALLOWED_HOSTS_DEPLOY')
+    CORS_ORIGIN_WHITELIST =env.list('CORS_ORIGIN_WHITELIST_DEPLOY')
+    CSRF_TRUSTED_ORIGINS =env.list('CSRF_TRUSTED_ORIGINS_DEPLOY')
 
 #     DEFAULT_FROM_EMAIL = 'BoomSlag - Ecommerce <mail@boomslag.com>'
 #     EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
